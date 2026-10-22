@@ -26,20 +26,15 @@ class TransactionModel {
     create( data ) {
         let transaction = new this.Transaction( data );
 
-        transaction.save(function (err, newTransaction) {
-            if (err) return console.error(err);
-            console.log(newTransaction);
-        });
+        transaction.save()
+            .then((newTransaction) => console.log(newTransaction))
+            .catch((err) => console.error(err));
     };
     getTransaction( data ) {
-        return this.Transaction.findOne(data, (err, transactions) => {
-            if (err) return console.log(err);
-        });
+        return this.Transaction.findOne(data).catch((err) => console.log(err));
     };
     getTransactions( data ) {
-        return this.Transaction.find(function(err, transactions) {
-            if (err) return console.log(err);
-        });
+        return this.Transaction.find().catch((err) => console.log(err));
     };
     update( data ) {
         return {'models/Transaction.update()': data};

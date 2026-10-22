@@ -43,20 +43,15 @@ class TradeModel {
     create( data ) {
         let trade = new this.Trade( data );
 
-        trade.save(function (err, newTrade) {
-            if (err) return console.error(err);
-            console.log(newTrade);
-        });
+        trade.save()
+            .then((newTrade) => console.log(newTrade))
+            .catch((err) => console.error(err));
     };
     getTrade( data ) {
-        return this.Trade.findOne(data, (err, trades) => {
-            if (err) return console.log(err);
-        });
+        return this.Trade.findOne(data).catch((err) => console.log(err));
     };
     getTrades( data ) {
-        return this.Trade.find(function(err, trades) {
-            if (err) return console.log(err);
-        });
+        return this.Trade.find().catch((err) => console.log(err));
     };
     update( data ) {
         return {'models/Trade.update()': data};

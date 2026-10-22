@@ -32,20 +32,15 @@ class UserModel {
     create( data ) {
         let user = new this.User( data );
 
-        user.save(function (err, newUser) {
-            if (err) return console.error(err);
-            console.log(newUser);
-        });
+        user.save()
+            .then((newUser) => console.log(newUser))
+            .catch((err) => console.error(err));
     };
     getUser( data ) {
-        return this.User.findOne(data, (err, users) => {
-            if (err) return console.log(err);
-        });
+        return this.User.findOne(data).catch((err) => console.log(err));
     };
     getUsers( data ) {
-        return this.User.find(function(err, users) {
-            if (err) return console.log(err);
-        });
+        return this.User.find().catch((err) => console.log(err));
     };
     update( data ) {
         return {'models/User.update()': data};

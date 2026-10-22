@@ -10,7 +10,7 @@ const dbURI = `mongodb://${dbHost}:${dbPort}/${dbName}`;
 const reconnectTimeout = 50000;
 
 function connect() {
-  mongoose.connect(dbURI, { auto_reconnect: true })
+  mongoose.connect(dbURI)
     .catch(() => {});
 }
 
