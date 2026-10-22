@@ -1,6 +1,5 @@
 var axios = require('axios');
 var InventoryModel = require('../models/inventory');
-var steamUserInventory = require('steam-user-inventory');
 
 class InventoryService {
     constructor() {

@@ -7,7 +7,6 @@
     "start-dev": "nodemon ./bin/www"
   },
   "dependencies": {
-    "@opskins/api": "^1.6.0",
     "axios": "^1.20.0",
     "body-parser": "^2.4.0",
     "cookie-parser": "~1.4.7",
@@ -20,7 +19,6 @@
     "openid-client": "^6.8.8",
     "pug": "3.0.4",
     "redis": "^6.3.0",
-    "serve-favicon": "~2.5.1",
-    "steam-user-inventory": "^4.2.0"
+    "serve-favicon": "~2.5.1"
   }
 }
